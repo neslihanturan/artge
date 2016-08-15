@@ -48,6 +48,9 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
+    'app.utils.multilang.middleware.AdminLocaleURLMiddleware',
+
 ]
 
 ROOT_URLCONF = 'artge.urls'
@@ -103,8 +106,9 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/dev/topics/i18n/
+ADMIN_LANGUAGE_CODE = 'tr-TR'
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'tr-TR'
 
 TIME_ZONE = 'Europe/Istanbul'
 
