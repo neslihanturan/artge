@@ -1,0 +1,168 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no, minimal-ui"/>
+
+	  <!-- FONTS -->
+    <!--<link href="{% static "/css/stroke-gap.min.css" %}" rel='stylesheet' type='text/css'>-->
+		<link href="{{ STATIC_URL }}css/font-awesome/4.6.2/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
+		<link href="{{ STATIC_URL }}css/stroke-gap.min.css" rel="stylesheet" type='text/css'>
+    <link href='{{ STATIC_URL }}fonts.googleapis.com/css0f7c.css?family=Open+Sans:300,400,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='{{ STATIC_URL }}fonts.googleapis.com/cssd5a5.css?family=Roboto:300,400,500,700,900' rel='stylesheet' type='text/css'>
+    <link href='{{ STATIC_URL }}fonts.googleapis.com/cssd4a6.css?family=Raleway:300,400,500,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='{{ STATIC_URL }}fonts.googleapis.com/css49c3.css?family=Poppins:300,400,700' rel='stylesheet' type='text/css'>
+    <link href='{{ STATIC_URL }}fonts.googleapis.com/css56ff.css?family=PT+Serif:400,700' rel='stylesheet' type='text/css'>
+
+    <!-- CSS -->
+    <link href="{{ STATIC_URL }}css/bootstrap/3.3.6/css/bootstrap.min.css" crossorigin="anonymous" rel="stylesheet">
+    <link href="{{ STATIC_URL }}css/idangerous.swiper.css" rel="stylesheet" type="text/css" />
+    <link href="{{ STATIC_URL }}css/settings.css" rel="stylesheet" type="text/css" />
+    <link href="{{ STATIC_URL }}css/layers.css" rel="stylesheet" type="text/css" />
+    <link href="{{ STATIC_URL }}css/navigation.css" rel="stylesheet" type="text/css" />
+    <link href="{{ STATIC_URL }}css/style.css" rel="stylesheet" type="text/css" />
+
+    <link rel="shortcut icon" href="{{ STATIC_URL }}img/favicon.ico" />
+  	<title>Artge Hijyen</title>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="tt-header-1">
+        <div class="container">
+            <div class="top-inner">
+                <a class="logo" href="{% url 'main_page_url' %}"><img src="{{ STATIC_URL }}img/logo.png" alt=""></a>
+            </div>
+            <button class="cmn-toggle-switch"><span></span></button>
+            <div class="toggle-block">
+                <nav class="main-nav clearfix">
+                    <ul>
+                      {%for menu_item in menu_items%}
+												{%if menu_item.smenus.all|length == 0 %}
+                        <li class="active">
+                            <a href={% url menu_item.item_name %}>{{menu_item}}</a>
+                        </li>
+												{%else%}
+												<li class="parent">
+														<a>{{menu_item}}</a>
+														<ul>
+															{%for sub_menu_item in menu_item.smenus.all%}
+																<li><a href="prosilSatis.html">{{sub_menu_item.smenu_item_name}}</a></li>
+															{%endfor%}
+														</ul>
+												</li>
+												{%endif%}
+                      {%endfor%}
+                    </ul>
+                </nav>
+                <div class="nav-more">
+                    <a class="c-btn type-1 size-2 font-2 color-3 " href="{% url 'contact_detail'%}"><span>İLETİŞİM</span></a>
+                </div>
+                <div class="top-line">
+                    <div class="container">
+                        <div class="top-info">
+                            <i class="fa fa-phone"></i>
+                            <a>{{ phone }}</a>
+                        </div>
+                        <div class="top-info">
+                            <i class="fa fa-envelope-o"></i>
+                            <a href="mailto:{{email}}">{{email}}</a>
+                        </div>
+                        <div class="top-info">
+                            <i class="fa fa-fax"></i>
+                            <a>fax: {{ fax }}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="tt-header-margin-1"></div>
+
+    <div id="content-wrapper">
+
+      {% block content %}{% endblock content %}
+
+    <!-- FOOTER -->
+    <footer class="tt-footer">
+        <div class="container">
+            <div class="empty-space marg-lg-b70 marg-md-b50 marg-xs-b30"></div>
+            <div class="row">
+                <div class="col-sm-6 col-md-4">
+                    <a class="tt-footer-logo">
+                        <img class="img-responsive" src="{{ STATIC_URL }}img/f_logo.png" height="71" width="270" alt="">
+                    </a>
+                    <div class="empty-space marg-lg-b25"></div>
+
+                    <div class="simple-text color-4">
+                        <p>Şirketimiz 2004 yılında kurulmuş olup 2011 yılına kadar endüstriyel temizlik hizmeti, temizlik
+
+							malzemeleri üretimi ve satışı konularında faliyet göstermiştir...</p>
+                        <p><a href="hakkimizda.html">Devamını Oku ...</a></p>
+                    </div>
+                    <div class="empty-space marg-md-b30"></div>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <h4 class="tt-footer-title">Hİzmetlerİmİz</h4>
+                    <div class="empty-space marg-lg-b20"></div>
+                    <ul class="tt-footer-list clearfix">
+                        <li><a href="prosilSatis.html">Prosil Konseptinde Temizlik Hizmeti</a></li>
+                        <li><a href="prosilSistem.html">Prosil Temizleme Sistemi Satışı</a></li>
+                    </ul>
+                    <div class="empty-space marg-md-b30"></div>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <h4 class="tt-footer-title">İletişİm</h4>
+                    <div class="empty-space marg-lg-b20"></div>
+
+                    <div class="tt-footer-contact">
+                        <i class="fa fa-map-marker"></i>
+                        Fatih Mh.İhvanlar cd.no.14/ sancaktepe-samandıra/İSTANBUL
+                    </div>
+                    <div class="tt-footer-contact">
+                        <i class="fa fa-phone"></i>
+                        <a> {{ phone }} </a>
+                    </div>
+                    <div class="tt-footer-contact">
+                        <i class="fa fa-envelope-o"></i>
+                        <a href="mailto:{{ email }}">{{ email }}</a>
+                    </div>
+                    <div class="tt-footer-contact">
+                        <i class="fa fa-envelope-o"></i>
+                        <a href="mailto:oktayturan@artgehijyen.com">oktayturan@artgehijyen.com</a>
+                    </div>
+                    <div class="tt-footer-contact">
+                        <i class="fa fa-fax"></i>
+                        <a >{{ fax }}</a>
+                    </div>
+
+                    <div class="empty-space marg-md-b30"></div>
+                </div>
+
+            </div>
+            <div class="empty-space marg-lg-b70 marg-md-b50 marg-xs-b30"></div>
+        </div>
+    </footer>
+    <script src="{{ STATIC_URL }}ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="{{ STATIC_URL }}maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <script src="{{ STATIC_URL }}js/idangerous.swiper.min.js"></script>
+    <script src="{{ STATIC_URL }}js/imagelightbox.min.js"></script>
+    <script src="{{ STATIC_URL }}js/jquery.themepunch.tools.min.js"></script>
+    <script src="{{ STATIC_URL }}js/jquery.themepunch.revolution.min.js"></script>
+    <script src="{{ STATIC_URL }}js/revolution.extension.slideanims.min.js"></script>
+    <script src="{{ STATIC_URL }}js/revolution.extension.layeranimation.min.js"></script>
+    <script src="{{ STATIC_URL }}js/revolution.extension.navigation.min.js"></script>
+    <script src="{{ STATIC_URL }}js/revolution.extension.actions.min.js"></script>
+    <script src="{{ STATIC_URL }}js/revolution.extension.parallax.min.js"></script>
+    <script src="{{ STATIC_URL }}js/revolution.extension.carousel.min.js"></script>
+    <script src="{{ STATIC_URL }}js/revolution.extension.kenburn.min.js"></script>
+    <script src="{{ STATIC_URL }}js/revolution.extension.migration.min.js"></script>
+    <script src="{{ STATIC_URL }}js/global.js"></script>
+</body>
+</html>

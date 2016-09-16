@@ -1,0 +1,180 @@
+{% extends 'app/base.html' %}
+{% block content %}
+    <div id="content-wrapper">
+
+        <!-- TT-PAGELABEL -->
+        <div class="tt-pagelabel background-block" style="background-image:url(img/breadcrumbs/breadcrumbs.jpg);">
+            <div class="container">
+                <h1 class="tt-pagelabel-title">İletİşİm</h1>
+            </div>
+        </div>
+
+        <!-- TT-BREADCRUMB -->
+        <div class="tt-breadcrumbs-wrapper">
+            <div class="container">
+                <ul class="tt-breadcrumbs">
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><span>İletİşİm</span></li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="bg-1">
+
+            <div class="container">
+				<div class="empty-space marg-lg-b70 marg-md-b60"></div>
+
+							<h3 class="tt-commercial-title">İletİşim</h3>
+
+							<p align="left" style="text-align:justify">E-posta:
+								<i class="fa fa-envelope-o"></i>
+								<a href="mailto:{{email}}">{{email}}</a>
+							</br></br>
+							E-posta:
+								<i class="fa fa-envelope-o"></i>
+								<a href="mailto:info@artgehijyen.com">oktayturan@artgehijyen.com</a>
+							</br></br>
+							Telefon:
+								<i class="fa fa-phone"></i>
+								<a href="tel:+902166611396">{{phone}}</a>
+							</br></br>
+							Telefon:
+								<i class="fa fa-phone"></i>
+								<a href="tel:">0532 460 97 19</a>
+							</br></br>
+							Fax:
+								<i class="fa fa-fax"></i>
+								<a>{{fax}}</a>
+							</br></br>
+
+							Adres:
+								<i class="fa fa-map-marker"></i>
+								{{address}}
+							</br></br>
+							</p>
+
+
+
+
+				<div class="empty-space marg-lg-b70 marg-md-b60"></div>
+			</div>
+
+		</div>
+<div class="empty-space marg-lg-b70 marg-md-b60"></div>
+		        <div class="bg-1">
+            <div class="container">
+                <div class="empty-space marg-lg-b70 marg-md-b60"></div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3 class="tt-block-title c-h3">Basında Prosil</h3>
+                        <div class="empty-space marg-lg-b50 marg-md-b30"></div>
+                        <div class="tt-post">
+                            <a class="tt-post-img custom-hover">
+                                <span class="tt-post-imgbg" style="background-image:url(img/post/post_1.png);"></span>
+                                <div class="tt-post-date"><span>Mayıs</span>2016</div>
+                            </a>
+                            <div class="tt-post-info clearfix">
+                                <div class="tt-post-inner">
+                                    <a class="tt-post-link" href="basinda.html">Turizm Düyası Dergi Röportaj</a>
+                                    <div class="simple-text font-2"><p>Klasik temizlik metodunda  kullanılan temizlik  sistemini incelediğimizde, temizlik kimyasalının
+                                    uygun oranlarda hazırlanarak bez...</p></div>
+                                    <div class="tt-post-label">
+                                        <span>By: <a href="http://www.turizmdunyasi.com.tr/">Turizm Dünyası Dergi</a></span>
+                                        <span><a href="basinda.html">Devamını Oku</a></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="empty-space marg-lg-b30"></div>
+                        <div class="empty-space marg-md-b60"></div>
+                    </div>
+                    <div class="col-md-6 col-lg-5 col-lg-offset-1">
+                        <h3 class="tt-block-title c-h3">Referanslarımız</h3>
+                        <div class="empty-space marg-lg-b50 marg-md-b30"></div>
+
+
+                        <div class="swiper-container" data-autoplay="5000" data-loop="1" data-speed="500" data-center="0" data-slides-per-view="1">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide active" data-val="0">
+                                    <div class="tt-testimonial">
+                                        <div class="tt-testimonial-top clearfix">
+                                            <a class="tt-testimonial-user custom-hover round">
+                                                <img class="img-responsive" src="img/referanslar/inovia.png" height="126" width="126" alt="">
+                                            </a>
+                                            <div class="tt-testimonial-info">
+                                                <a class="tt-testimonial-title">İnovia2 (Esenyurt/İstanbul)</a>
+                                                <div class="simple-text">
+                                                    <p>İnovia2 (Esenyurt/İstanbul) 3700 konutluk site prosili seçti. 2013'ten beri çözüm ortaklığımız devam etmektedir.</p>
+                                                </div>
+                                                <div class="tt-testimonial-rating">
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="swiper-slide active" data-val="1">
+                                    <div class="tt-testimonial">
+                                        <div class="tt-testimonial-top clearfix">
+                                            <a class="tt-testimonial-user custom-hover round">
+                                                <img class="img-responsive" src="img/referanslar/conrad.png" height="126" width="126" alt="">
+                                            </a>
+                                            <div class="tt-testimonial-info">
+                                                <a class="tt-testimonial-title">Conrad İstanbul Bosphorous</a>
+                                                <div class="simple-text">
+                                                    <p>2015 Haziran ayından beri Conrad İstanbul Otel misafirlerinin hijyenini prosil sistem ile sağlamaktadır.</p>
+                                                </div>
+                                                <div class="tt-testimonial-rating">
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide active" data-val="2">
+                                    <div class="tt-testimonial">
+                                        <div class="tt-testimonial-top clearfix">
+                                            <a class="tt-testimonial-user custom-hover round">
+                                                <img class="img-responsive" src="img/referanslar/hilton.png" height="126" width="126" alt="">
+                                            </a>
+                                            <div class="tt-testimonial-info">
+                                                <a class="tt-testimonial-title">Hilton İstanbul Bosphorous</a>
+                                                <div class="simple-text">
+                                                    <p>2016 Ocak ayından beri Hilton İstanbul Bosphorous Otel misafirlerinin hijyenini prosil sistem ile sağlamaktadır.</p>
+                                                </div>
+                                                <div class="tt-testimonial-rating">
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pagination type-1"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="empty-space marg-lg-b110 marg-md-b50"></div>
+
+
+            </div>
+        </div>
+        </div>
+{%endblock content%}
