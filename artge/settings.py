@@ -31,6 +31,10 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'admin_tools',
+    'admin_tools.theming',
+    'admin_tools.menu',
+    'admin_tools.dashboard',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,7 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app',
-]
+    'redactor',
+    ]
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
@@ -58,18 +63,27 @@ ROOT_URLCONF = 'artge.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'APP_DIRS': False, ##default was true
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
+                'django.core.context_processors.static',
                 'django.contrib.messages.context_processors.messages',
+                'app.context_processors.list_menu',
             ],
+            'loaders': [
+                'django.template.loaders.filesystem.Loader',
+                'django.template.loaders.app_directories.Loader',
+                'admin_tools.template_loaders.Loader',
+            ]
         },
     },
 ]
+
+
 
 WSGI_APPLICATION = 'artge.wsgi.application'
 
@@ -124,3 +138,23 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+#STATICFILES_FINDERS = 'django.contrib.staticfiles.finders.AppDirectoriesFinder'
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+
+#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+)
+
+
+
+ADMIN_TOOLS_MENU = 'menu.CustomMenu'
+
+
+REDACTOR_OPTIONS = {'lang': 'en'}
+REDACTOR_UPLOAD = 'uploads/'
+
+
+print ("static dir path", STATICFILES_DIRS)
